@@ -22,8 +22,8 @@ public class Contestant implements Comparable<Contestant> {
 		return name;
 	}
 
-	public void score() {
-		points += 1;
+	public void score(int points) {
+		this.points += points;
 	}
 
 	@Override

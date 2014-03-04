@@ -1,5 +1,6 @@
 package studentapplication;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -39,7 +40,9 @@ public class HighScorePanel extends JPanel {
 		highscore.setForeground(fgColor);
 		highscore.setAlignmentX(LEFT_ALIGNMENT);
 
-		add(highscore);
+		setLayout(new BorderLayout());
+
+		add(highscore, BorderLayout.NORTH);
 
 		/*
 		 * TEST: addContestant("FS"); addContestant("KA"); addContestant("FS");
@@ -48,10 +51,7 @@ public class HighScorePanel extends JPanel {
 	}
 
 	public void addContestant(String name) {
-		if (contestantExists(name))
-			updateContestant(name);
-		else
-			contestantList.add(new Contestant(name));
+		contestantList.add(new Contestant(name));
 		updateContestantList();
 	}
 
@@ -72,12 +72,17 @@ public class HighScorePanel extends JPanel {
 		return !(findContestant(name) == null);
 	}
 
-	public void updateContestant(String name) {
-		updateContestant(findContestant(name));
+	public void updateContestant(String name, int score) {
+		if (contestantExists(name))
+			updateContestant(findContestant(name), score);
+		else
+			addContestant(name);
+
 	}
 
-	public void updateContestant(Contestant contestant) {
-		contestant.score();
+	public void updateContestant(Contestant contestant, int score) {
+		contestant.score(score);
+		updateContestantList();
 	}
 
 	public Contestant findContestant(String name) {
@@ -86,6 +91,16 @@ public class HighScorePanel extends JPanel {
 				return contestant;
 		}
 		return null;
+	}
+
+	public void removeContestant(String name) {
+		if (contestantExists(name))
+			removeContestant(findContestant(name));
+	}
+
+	public void removeContestant(Contestant contestant) {
+		contestantList.remove(contestant);
+		updateContestantList();
 	}
 
 	public void setFont(Font font) {
