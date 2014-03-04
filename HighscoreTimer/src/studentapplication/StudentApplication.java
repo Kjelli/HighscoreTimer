@@ -62,7 +62,10 @@ public class StudentApplication extends JFrame {
 						highscore.updateContestant(arguments[i], 1);
 				break;
 			case "X":
-				if (antall_argumenter > 1)
+				if (antall_argumenter == 2 && arguments[1].equals("*"))
+					highscore.clear();
+
+				if (antall_argumenter > 2)
 					for (int i = 1; i < antall_argumenter; i++)
 						highscore.removeContestant(arguments[i]);
 				break;

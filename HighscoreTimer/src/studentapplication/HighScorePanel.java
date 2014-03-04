@@ -107,4 +107,9 @@ public class HighScorePanel extends JPanel {
 		this.font = font;
 	}
 
+	public void clear() {
+		contestantList.clear();
+		updateContestantList();
+	}
+
 }
