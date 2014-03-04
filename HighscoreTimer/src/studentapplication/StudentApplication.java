@@ -9,15 +9,18 @@ import javax.swing.JTextField;
 public class StudentApplication extends JFrame {
 
 	HighScorePanel highscore;
+	ClockPanel clockPanel;
 	JTextField textfield;
 
 	public StudentApplication() {
 
 		highscore = new HighScorePanel();
+		clockPanel = new ClockPanel();
 		textfield = new JTextField("...");
 
 		setLayout(new BorderLayout());
 
+		add(clockPanel, BorderLayout.EAST);
 		add(highscore, BorderLayout.WEST);
 		add(textfield, BorderLayout.SOUTH);
 
