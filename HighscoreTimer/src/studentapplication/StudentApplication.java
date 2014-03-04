@@ -65,7 +65,7 @@ public class StudentApplication extends JFrame {
 				if (antall_argumenter == 2 && arguments[1].equals("*"))
 					highscore.clear();
 
-				if (antall_argumenter > 2)
+				else if (antall_argumenter > 1)
 					for (int i = 1; i < antall_argumenter; i++)
 						highscore.removeContestant(arguments[i]);
 				break;
