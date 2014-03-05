@@ -8,6 +8,7 @@ import java.sql.Time;
 
 public class ClockPanel extends JPanel{
     long t = 300000;
+    Thread th;
     public ClockPanel(){
         setPreferredSize(new Dimension(200, 200));
         setBackground(Color.BLUE);
@@ -20,7 +21,7 @@ public class ClockPanel extends JPanel{
         //g2d.translate(getHeight()/2, getWidth()/2);
         g2d.setFont(new Font("Arial", Font.BOLD, 25));
         g2d.setColor(Color.WHITE);
-        System.out.println(t);
+        //System.out.println(t);
         FontMetrics fm = g2d.getFontMetrics();
         //long t = System.currentTimeMillis();
 
@@ -31,9 +32,24 @@ public class ClockPanel extends JPanel{
         repaint();
     }
 
-    public void startClock(int min){
+    public void startClockMin(int min){
+        if(th != null){
+            th.stop();
+        }
+        t = 0;
         t = min*60*1000;
-        new Thread(new Runner()).start();
+        th = new Thread(new Runner());
+        th.start();
+    }
+
+    public void startClockSec(int sec){
+        if(th != null){
+            th.stop();
+        }
+        t = 0;
+        t = sec*1000;
+        th = new Thread(new Runner());
+        th.start();
     }
 
     class Runner implements Runnable{
@@ -41,10 +57,11 @@ public class ClockPanel extends JPanel{
         @Override
         public void run() {
             try {
-                while(t >= 0){
+                while(t > 0){
                     Thread.currentThread().sleep(1000);
                     t -= 1000;
                 }
+                Toolkit.getDefaultToolkit().beep();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
