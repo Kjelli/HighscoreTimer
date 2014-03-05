@@ -6,25 +6,11 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.sql.Time;
 
-public class ClockPanel extends JPanel implements MouseListener{
+public class ClockPanel extends JPanel{
     long t = 300000;
     public ClockPanel(){
         setPreferredSize(new Dimension(200, 200));
         setBackground(Color.BLUE);
-        addMouseListener(this);
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    while(t >= 0){
-                    Thread.currentThread().sleep(1000);
-                        t -= 1000;
-                    }
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-        }).start();
     }
 
     @Override
@@ -45,28 +31,23 @@ public class ClockPanel extends JPanel implements MouseListener{
         repaint();
     }
 
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        System.out.println(e.getX() + " : " + e.getY());
+    public void startClock(int min){
+        t = min*60*1000;
+        new Thread(new Runner()).start();
     }
 
-    @Override
-    public void mousePressed(MouseEvent e) {
+    class Runner implements Runnable{
 
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
+        @Override
+        public void run() {
+            try {
+                while(t >= 0){
+                    Thread.currentThread().sleep(1000);
+                    t -= 1000;
+                }
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
