@@ -74,7 +74,7 @@ public class StudentApplication extends JFrame {
 					try {
 						int minutter = Integer.parseInt(arguments[1]);
 						if (minutter > 0 && minutter < 3600) {
-							// clockpanel.startClock(minutter);
+							clockpanel.startClock(minutter);
 						} else
 							JOptionPane.showConfirmDialog(null, arguments[1]
 									+ " minutter? wot.", "", -1, 0);
