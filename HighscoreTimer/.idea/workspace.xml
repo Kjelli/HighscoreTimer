@@ -67,7 +67,7 @@
       <file leaf-file-name="ClockPanel.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/studentapplication/ClockPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="5" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.8790036" vertical-offset="126" max-vertical-offset="1003">
+            <state line="51" column="5" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.8386714" vertical-offset="160" max-vertical-offset="1003">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="class#Runner#0;class#ClockPanel#0" expanded="true" />
@@ -80,6 +80,15 @@
         <entry file="file://$PROJECT_DIR$/src/studentapplication/StudentApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="8" column="13" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HighScorePanel.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/studentapplication/HighScorePanel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="13" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
               <folding />
             </state>
           </provider>
@@ -376,13 +385,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/studentapplication/HighScorePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="13" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/studentapplication/StudentApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="13" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
@@ -390,9 +392,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/studentapplication/HighScorePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="13" selection-start="70" selection-end="70" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/studentapplication/ClockPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="5" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.8790036" vertical-offset="126" max-vertical-offset="1003">
+        <state line="51" column="5" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.8386714" vertical-offset="160" max-vertical-offset="1003">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="class#Runner#0;class#ClockPanel#0" expanded="true" />
