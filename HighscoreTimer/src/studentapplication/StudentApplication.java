@@ -28,7 +28,7 @@ public class StudentApplication extends JFrame {
 		setLayout(new BorderLayout());
 
 		add(clockPanel, BorderLayout.EAST);
-		add(highscore, BorderLayout.WEST);
+		add(highscore, BorderLayout.CENTER);
 		add(input, BorderLayout.SOUTH);
 
 		setSize(640, 480);
@@ -75,9 +75,7 @@ public class StudentApplication extends JFrame {
 					try {
 						int minutter = Integer.parseInt(arguments[1]);
 						if (minutter >= 0 && minutter < 3600) {
-							// clockPanel.startClock(minutter);
-							System.out.println("Starter klokken med "
-									+ minutter + " minutter.");
+							clockPanel.startClockMin(minutter);
 						} else
 							JOptionPane.showConfirmDialog(null, arguments[1]
 									+ " minutter? wot.", "", -1, 0);
@@ -91,9 +89,7 @@ public class StudentApplication extends JFrame {
 						try {
 							int sekunder = Integer.parseInt(arguments[2]);
 							if (sekunder >= 0) {
-								// clockPanel.startClockSec(sekunder);
-								System.out.println("Starter klokken med "
-										+ sekunder + " sekunder.");
+								clockPanel.startClockSec(sekunder);
 							} else
 								JOptionPane.showConfirmDialog(null,
 										arguments[2] + " sekunder? wot.", "",

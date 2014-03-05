@@ -15,8 +15,8 @@ public class HighScorePanel extends JPanel {
 	private ArrayList<Contestant> contestantList = new ArrayList<Contestant>();
 
 	private Font font = new Font("Arial", Font.BOLD, 30);
-	private Color bgColor = new Color(230, 230, 255);
-	private Color fgColor = new Color(0, 0, 0);
+	private Color bgColor = new Color(130, 130, 255);
+	private Color fgColor = new Color(255, 255, 255);
 
 	JTextArea highscore;
 
@@ -35,7 +35,7 @@ public class HighScorePanel extends JPanel {
 
 		setLayout(new BorderLayout());
 
-		add(highscore, BorderLayout.NORTH);
+		add(highscore, BorderLayout.WEST);
 
 		/*
 		 * TEST: addContestant("FS"); addContestant("KA"); addContestant("FS");
