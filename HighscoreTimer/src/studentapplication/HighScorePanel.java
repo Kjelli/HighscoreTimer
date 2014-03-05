@@ -2,7 +2,6 @@ package studentapplication;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,24 +17,18 @@ public class HighScorePanel extends JPanel {
 	private Font font = new Font("Arial", Font.BOLD, 30);
 	private Color bgColor = new Color(230, 230, 255);
 	private Color fgColor = new Color(0, 0, 0);
-	private Dimension panelSize = new Dimension(320, 460);
 
 	JTextArea highscore;
 
 	public HighScorePanel() {
 		setFont(font);
-		setMinimumSize(panelSize);
-		setPreferredSize(panelSize);
-		setMaximumSize(panelSize);
+		setBackground(bgColor);
 
 		highscore = new JTextArea();
 
 		highscore.setFont(font);
 		highscore.setEditable(false);
 		highscore.setFocusable(false);
-		highscore.setMinimumSize(panelSize);
-		highscore.setPreferredSize(panelSize);
-		highscore.setMaximumSize(panelSize);
 		highscore.setBackground(bgColor);
 		highscore.setForeground(fgColor);
 		highscore.setAlignmentX(LEFT_ALIGNMENT);

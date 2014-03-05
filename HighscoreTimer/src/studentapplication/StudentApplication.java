@@ -1,6 +1,7 @@
 package studentapplication;
 
 import java.awt.BorderLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -73,8 +74,10 @@ public class StudentApplication extends JFrame {
 				if (antall_argumenter == 2) {
 					try {
 						int minutter = Integer.parseInt(arguments[1]);
-						if (minutter > 0 && minutter < 3600) {
-							clockpanel.startClock(minutter);
+						if (minutter >= 0 && minutter < 3600) {
+							// clockPanel.startClock(minutter);
+							System.out.println("Starter klokken med "
+									+ minutter + " minutter.");
 						} else
 							JOptionPane.showConfirmDialog(null, arguments[1]
 									+ " minutter? wot.", "", -1, 0);
@@ -83,7 +86,27 @@ public class StudentApplication extends JFrame {
 								+ " minutter? wot.", "", -1, 0);
 					}
 					break;
+				} else if (antall_argumenter == 3) {
+					if (arguments[1].equals("-S"))
+						try {
+							int sekunder = Integer.parseInt(arguments[2]);
+							if (sekunder >= 0) {
+								// clockPanel.startClockSec(sekunder);
+								System.out.println("Starter klokken med "
+										+ sekunder + " sekunder.");
+							} else
+								JOptionPane.showConfirmDialog(null,
+										arguments[2] + " sekunder? wot.", "",
+										-1, 0);
+						} catch (NumberFormatException nfe) {
+							JOptionPane.showConfirmDialog(null, arguments[2]
+									+ " sekunder? wot.", "", -1, 0);
+						}
+					break;
 				}
+			case "BEEP":
+				Toolkit.getDefaultToolkit().beep();
+				break;
 
 			default:
 				JOptionPane.showConfirmDialog(null, "Dafuq?", "Dafuq", -1, 0);
