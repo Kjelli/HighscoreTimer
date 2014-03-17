@@ -103,6 +103,9 @@ public class StudentApplication extends JFrame {
 			case "BEEP":
 				Toolkit.getDefaultToolkit().beep();
 				break;
+			case "ANNOUNCE":
+				highscore.announceWinners();
+				break;
 
 			default:
 				JOptionPane.showConfirmDialog(null, "Dafuq?", "Dafuq", -1, 0);

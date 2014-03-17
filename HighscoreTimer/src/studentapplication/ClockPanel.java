@@ -64,7 +64,7 @@ public class ClockPanel extends JPanel {
 		th.start();
 	}
 
-	class Runner implements Runnable {
+	protected class Runner implements Runnable {
 
 		@Override
 		public void run() {

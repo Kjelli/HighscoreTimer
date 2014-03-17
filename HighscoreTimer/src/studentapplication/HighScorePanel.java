@@ -48,7 +48,7 @@ public class HighScorePanel extends JPanel {
 		updateContestantList();
 	}
 
-	private void updateContestantList() {
+	public void updateContestantList() {
 		highscore.setText("");
 		StringBuilder sb = new StringBuilder("");
 
@@ -59,6 +59,7 @@ public class HighScorePanel extends JPanel {
 					+ "\n");
 		}
 		highscore.setText(sb.toString());
+		highscore.repaint();
 	}
 
 	public boolean contestantExists(String name) {
@@ -102,6 +103,17 @@ public class HighScorePanel extends JPanel {
 
 	public void clear() {
 		contestantList.clear();
+		updateContestantList();
+	}
+
+	public void announceWinners() {
+		for (int i = 0; i < 20; i++) {
+			Collections.shuffle(contestantList);
+		}
+
+		while (contestantList.size() > 3) {
+			contestantList.remove(contestantList.size() - 1);
+		}
 		updateContestantList();
 	}
 
